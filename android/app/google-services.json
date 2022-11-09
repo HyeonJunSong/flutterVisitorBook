@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "182816265659",
+    "project_id": "visitorbook-2ce5b",
+    "storage_bucket": "visitorbook-2ce5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182816265659:android:5bff00a326f4281ca0e09e",
+        "android_client_info": {
+          "package_name": "com.example.flutterweb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182816265659-mqlb8f9rti7h9f41688modcb99j5oa1i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4AtI8lXZCeQPQxNIQhYayN0upzn_y4yA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182816265659-mqlb8f9rti7h9f41688modcb99j5oa1i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
