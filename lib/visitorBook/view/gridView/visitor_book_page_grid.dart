@@ -3,18 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutterweb/visitorBook/model/note.dart';
 import 'package:get/get.dart';
 import 'package:flutterweb/visitorBook/model/constants.dart';
-import 'package:flutterweb/visitorBook/view/dialog_post_note.dart';
-import 'package:flutterweb/visitorBook/view/note_widget.dart';
+import 'package:flutterweb/visitorBook/widgets/dialog_post_note.dart';
+import 'package:flutterweb/visitorBook/view/gridView/note_widget_grid.dart';
 import 'package:flutterweb/visitorBook/viewController/visitor_book_view_controller.dart';
 
-class VisitorBookPage extends StatefulWidget {
-  const VisitorBookPage({Key? key}) : super(key: key);
+class VisitorBookPageGrid extends StatefulWidget {
+  const VisitorBookPageGrid({Key? key}) : super(key: key);
 
   @override
-  State<VisitorBookPage> createState() => _VisitorBookPageState();
+  State<VisitorBookPageGrid> createState() => _VisitorBookPageGridState();
 }
 
-class _VisitorBookPageState extends State<VisitorBookPage> {
+class _VisitorBookPageGridState extends State<VisitorBookPageGrid> {
   @override
   initState(){
     super.initState();
@@ -82,7 +82,7 @@ class _VisitorBookPageState extends State<VisitorBookPage> {
           Column(
             children: Get.find<VisitorBookViewController>().notes
                 .where((item) => Get.find<VisitorBookViewController>().notes.indexOf(item) % numRow == element)
-                .map((note) => NoteWidget(
+                .map((note) => NoteWidgetGrid(
               title: note.title,
               // userId: note.userId,
               content: note.content,

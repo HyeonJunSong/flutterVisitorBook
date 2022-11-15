@@ -22,4 +22,6 @@ class VisitorBookViewController extends GetxService{
   Future<int> postNote(String title, String content){
     return postNoteToFirebase(title, content);
   }
+
+
 }

@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:flutterweb/visitorBook/model/constants.dart';
 
-class NoteWidget extends StatelessWidget {
+class NoteWidgetGrid extends StatelessWidget {
   final String title;
   final String content;
   final String date;
 
-  const NoteWidget({
+  const NoteWidgetGrid({
     Key? key,
     required this.title,
     required this.content,

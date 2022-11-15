@@ -8,11 +8,11 @@ const Color Cmain_dark = Color(0xFF31525B);
 //visitor Book Page
 const double vbp_padding_ver = 32;
 const double vbp_padding_hor = 50;
-const double vbp_welcomeFS = 100;
+const double vbp_welcomeFS = 60;
 
-const double vbp_buttonDia = 90;
+const double vbp_buttonDia = 60;
 const double vbp_buttonborder = 3;
-const double vbp_buttonIcon = 45;
+const double vbp_buttonIcon = 30;
 
 ////////////////////////////////////////////////////////////////////////////////Note Widget
 const double nw_width = 250;
