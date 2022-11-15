@@ -35,7 +35,7 @@ const double nw_FSdate = 15;
 
 ////////////////////////////////////////////////////////////////////////////////Dialog Post Note
 const double dpn_width = 530;
-const double dpn_hight = 700;
+const double dpn_hight = 600;
 const double dpn_padding = 40;
 const double dpn_TitleSize = 50;
 

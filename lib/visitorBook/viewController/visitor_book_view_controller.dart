@@ -4,14 +4,10 @@ import 'package:flutterweb/visitorBook/model/constants.dart';
 import 'package:flutterweb/visitorBook/model/note.dart';
 
 class VisitorBookViewController extends GetxService{
-  RxList<Note> notes = <Note>[].obs;
+  RxMap<String, Note> notes = <String, Note>{}.obs;
 //  RxList<Note> notes = tempList.obs;
 
-  void addNote(Note newNote){
-    notes.add(newNote);
-  }
-
-  void updateNotes (List<Note> newNotes) {
+  void updateNotes (Map<String, Note> newNotes) {
     notes(newNotes);
   }
 
@@ -22,6 +18,18 @@ class VisitorBookViewController extends GetxService{
   Future<int> postNote(String title, String content){
     return postNoteToFirebase(title, content);
   }
-
+  Future<int> addComment(String key, String newComment){
+    return addCommentFirebase(key, newComment).then(
+      (value) {
+        if(value == 200){
+          notes[key]!.comments.add(newComment);
+          return 200;
+        }
+        else {
+          return value;
+        }
+      }
+    );
+  }
 
 }

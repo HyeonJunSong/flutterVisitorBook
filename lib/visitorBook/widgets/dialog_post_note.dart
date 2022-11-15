@@ -73,6 +73,7 @@ class _DialogPostNoteState extends State<DialogPostNote> {
     // height: dpn_inputTitleHeight,
 
     child: TextFormField(
+      cursorColor: Cmain_dark,
       style: TextStyle(
         fontSize: dpn_inputTitleSize,
         color: Cmain_dark,
@@ -105,6 +106,7 @@ class _DialogPostNoteState extends State<DialogPostNote> {
     // width: dpn_inputWidth.w,
     // height: dpn_inputContentHeight.h,
     child: TextFormField(
+      cursorColor: Cmain_dark,
       style: TextStyle(
         fontSize: dpn_inputContentSize,
         color: Cmain_dark,
@@ -135,14 +137,10 @@ class _DialogPostNoteState extends State<DialogPostNote> {
 
   _submitButton() => ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: Cmain_light,
+      backgroundColor: Cmain_dark,
 //      fixedSize: Size(dpn_submitWith.w, dpn_submitHeight.h),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(nw_radius.w)),
-          side: BorderSide(
-            color: Cmain_dark,
-            width: nw_borderlineWidth.w,
-          )
       ),
     ),
 
@@ -166,13 +164,13 @@ class _DialogPostNoteState extends State<DialogPostNote> {
     FittedBox(
       child: Text("Submit", style: TextStyle(
           fontSize: dpn_submitSize,
-          color: Cmain_dark
+          color: Cbackground1
       ),),
     ) :
     Container(
       padding: EdgeInsets.all(10),
       child: CircularProgressIndicator(
-        color: Cmain_dark,
+        color: Cbackground1,
       ),
     ),
   );
@@ -182,17 +180,10 @@ class _DialogPostNoteState extends State<DialogPostNote> {
   _lightBoxDecoration() => BoxDecoration(
     color: Cbackground1,
     borderRadius: BorderRadius.all(Radius.circular(nw_radius.w)),
-    border: Border.all(
-      color: Colors.transparent
-    )
   );
 
   _darkBoxDecoration() => BoxDecoration(
-      color: Cmain_light,
-      border: Border.all(
       color: Cmain_dark,
-      width: nw_borderlineWidth.h,
-    ),
     borderRadius: BorderRadius.all(Radius.circular(nw_radius.w)),
   );
 

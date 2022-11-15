@@ -77,20 +77,20 @@ class _VisitorBookPageListState extends State<VisitorBookPageList> {
   );
 
   //////////////////////////////////////////////////////////////////////////////visitor Books
-  _visitorBookLists() => Column(
-    children: List<Widget>.from(Get.find<VisitorBookViewController>().notes.map((element)
+  _visitorBookLists() => Obx(() => Column(
+    children: List<Widget>.from(Get.find<VisitorBookViewController>().notes.entries.map((element)
       => GestureDetector(
         child: NoteWidgetList(
-          title: element.title,
-          content: element.content,
-          date: element.date
+          title: element.value.title,
+          content: element.value.content,
+          date: element.value.date
         ),
         onTap: (){
-          Get.to(() => NotePage(note: element), transition: Transition.rightToLeftWithFade);
+          Get.to(() => NotePage(noteKey: element.key, note: element.value), transition: Transition.rightToLeftWithFade);
         },
       )
     ))
-  );
+  ));
 
   //////////////////////////////////////////////////////////////////////////////design
   _mainBoxDecoration() => const BoxDecoration(

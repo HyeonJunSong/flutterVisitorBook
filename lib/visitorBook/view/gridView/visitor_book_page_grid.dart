@@ -80,14 +80,14 @@ class _VisitorBookPageGridState extends State<VisitorBookPageGrid> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [for(int i = 0; i < numRow; i++) i].map((element) =>
           Column(
-            children: Get.find<VisitorBookViewController>().notes
-                .where((item) => Get.find<VisitorBookViewController>().notes.indexOf(item) % numRow == element)
-                .map((note) => NoteWidgetGrid(
-              title: note.title,
-              // userId: note.userId,
-              content: note.content,
-              date: note.date,
-            )).toList(),
+            // children: Get.find<VisitorBookViewController>().notes
+            //     .where((item) => Get.find<VisitorBookViewController>().notes.indexOf(item) % numRow == element)
+            //     .map((note) => NoteWidgetGrid(
+            //   title: note.title,
+            //   // userId: note.userId,
+            //   content: note.content,
+            //   date: note.date,
+            // )).toList(),
           )
       ).toList(),
     );

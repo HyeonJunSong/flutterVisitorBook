@@ -38,26 +38,24 @@ void getNotesFromFirebase() {
 
     Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
 
-    List<Note> newNotes = [];
+    Map<String, Note> newNotes = {};
     data.forEach((key, value) {
       Map<String, dynamic> newNote = value as Map<String, dynamic>;
 
       //잘못된 형식의 노트는 넘기기 위한 try catch 문
       try {
-        newNotes.add(
-          Note(
-            title: value["title"],
-            content: value["content"],
-            date: value["date"],
-            comments: List<String>.from(value["comments"]),
-          ),
+        newNotes[key] = Note(
+          title: value["title"],
+          content: value["content"],
+          date: value["date"],
+          comments: List<String>.from(value["comments"]),
         );
       }catch(error){
         print(error);
       };
 
     });
-    
+
     Get.find<VisitorBookViewController>().updateNotes(newNotes);
   });
 }
@@ -76,12 +74,14 @@ Future<int> postNoteToFirebase(String title, String content) {
     })
     .then((value) => 200)
     .catchError((error) => 404);
-  //   .add({
-  //   'title': title,
-  //   'content': content,
-  //   "date": DateFormat("yyyy-MM-dd").format(DateTime.now()),
-  //   "timestamp" : FieldValue.serverTimestamp()
-  // })
-  // .then((value) => 200)
-  // .catchError((error) => 404);
+}
+
+Future<int> addCommentFirebase(String curNoteKey, String comment){
+  return FirebaseFirestore.instance.collection('visitorBook')
+  .doc("notes")
+  .update({
+    "${curNoteKey}.comments" : FieldValue.arrayUnion([comment]),
+  })
+  .then((value) => 200)
+  .catchError((error) => 404);
 }
